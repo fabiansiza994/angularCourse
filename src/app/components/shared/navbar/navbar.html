@@ -1,0 +1,31 @@
+<style>
+    nav{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        padding: 10px;
+        background-color: #212121;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    nav a.active {
+        font-weight: bold;
+        color: red;
+    }
+</style>
+
+<nav>
+    <a routerLink="/" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}">Angular App</a>
+
+    <a [routerLink]="['/hero']" 
+    [routerLinkActive]="'active'" class="nav-link">Hero Page</a>
+
+    <a [routerLink]="['/dragonball']" 
+    [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{exact: true}" class="nav-link">dragonball</a>
+</nav>
