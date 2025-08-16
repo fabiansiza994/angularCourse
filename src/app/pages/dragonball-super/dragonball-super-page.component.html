@@ -1,0 +1,38 @@
+<h1>DragonBall Page</h1>
+
+<hr>
+
+<section class="row">
+    <div class="col-12 col-sm-6 col-md-4">
+        
+        <h3>Agregar: {{ name() }}</h3>
+        <input 
+            type="text" 
+            placeholder="character name" 
+            class="form-control mb-2"
+            [value] ="name()"
+            (input)="name.set(txtName.value)"
+            #txtName
+        >
+        <input 
+            type="number" 
+            placeholder="power" 
+            class="form-control mb-2"
+            [value]="power()"
+            (input)="power.set(+txtPower.value)"
+            #txtPower>
+        <input 
+            type="text" 
+            placeholder="ability" 
+            class="form-control mb-2"
+            [value]="ability()"
+            (input)="ability.set(txtAbility.value)"
+            #txtAbility>
+        <button (click)="addCharacter()" class="btn btn-primary">Agregar</button>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4">
+        <dragonball-character-list [characters]="characters()"/>
+        
+    </div>
+</section>
